@@ -25,6 +25,30 @@ impl IconData for CircleCheck {
 crate::hypertext_renderable!(CircleCheck);
 
 #[derive(Default, Copy, Clone, PartialEq, Eq)]
+pub struct CircleXmark;
+
+impl IconData for CircleXmark {
+    const NAME: &'static str = "circle-xmark";
+    const VIEW_BOX: &'static str = "0 0 512 512";
+    const PATH_DATA: &'static str = "M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM167 167c-9.4 9.4-9.4 24.6 0 33.9l55 55-55 55c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l55-55 55 55c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-55-55 55-55c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-55 55-55-55c-9.4-9.4-24.6-9.4-33.9 0z";
+}
+
+#[cfg(feature = "hypertext")]
+crate::hypertext_renderable!(CircleXmark);
+
+#[derive(Default, Copy, Clone, PartialEq, Eq)]
+pub struct Copy;
+
+impl IconData for Copy {
+    const NAME: &'static str = "copy";
+    const VIEW_BOX: &'static str = "0 0 448 512";
+    const PATH_DATA: &'static str = "M384 336l-192 0c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l133.5 0c4.2 0 8.3 1.7 11.3 4.7l58.5 58.5c3 3 4.7 7.1 4.7 11.3L400 320c0 8.8-7.2 16-16 16zM192 384l192 0c35.3 0 64-28.7 64-64l0-197.5c0-17-6.7-33.3-18.7-45.3L370.7 18.7C358.7 6.7 342.5 0 325.5 0L192 0c-35.3 0-64 28.7-64 64l0 256c0 35.3 28.7 64 64 64zM64 128c-35.3 0-64 28.7-64 64L0 448c0 35.3 28.7 64 64 64l192 0c35.3 0 64-28.7 64-64l0-16-48 0 0 16c0 8.8-7.2 16-16 16L64 464c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l16 0 0-48-16 0z";
+}
+
+#[cfg(feature = "hypertext")]
+crate::hypertext_renderable!(Copy);
+
+#[derive(Default, Copy, Clone, PartialEq, Eq)]
 pub struct XmarkCircle;
 
 impl IconData for XmarkCircle {
@@ -32,3 +56,6 @@ impl IconData for XmarkCircle {
     const VIEW_BOX: &'static str = "0 0 512 512";
     const PATH_DATA: &'static str = "M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM167 167c-9.4 9.4-9.4 24.6 0 33.9l55 55-55 55c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l55-55 55 55c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-55-55 55-55c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-55 55-55-55c-9.4-9.4-24.6-9.4-33.9 0z";
 }
+
+#[cfg(feature = "hypertext")]
+crate::hypertext_renderable!(XmarkCircle);

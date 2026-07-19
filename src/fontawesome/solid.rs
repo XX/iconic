@@ -85,6 +85,30 @@ impl IconData for CircleInfo {
 crate::hypertext_renderable!(CircleInfo);
 
 #[derive(Default, Copy, Clone, PartialEq, Eq)]
+pub struct CircleXmark;
+
+impl IconData for CircleXmark {
+    const NAME: &'static str = "circle-xmark";
+    const VIEW_BOX: &'static str = "0 0 512 512";
+    const PATH_DATA: &'static str = "M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM167 167c9.4-9.4 24.6-9.4 33.9 0l55 55 55-55c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-55 55 55 55c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-55-55-55 55c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l55-55-55-55c-9.4-9.4-9.4-24.6 0-33.9z";
+}
+
+#[cfg(feature = "hypertext")]
+crate::hypertext_renderable!(CircleXmark);
+
+#[derive(Default, Copy, Clone, PartialEq, Eq)]
+pub struct Copy;
+
+impl IconData for Copy {
+    const NAME: &'static str = "copy";
+    const VIEW_BOX: &'static str = "0 0 448 512";
+    const PATH_DATA: &'static str = "M192 0c-35.3 0-64 28.7-64 64l0 256c0 35.3 28.7 64 64 64l192 0c35.3 0 64-28.7 64-64l0-200.6c0-17.4-7.1-34.1-19.7-46.2L370.6 17.8C358.7 6.4 342.8 0 326.3 0L192 0zM64 128c-35.3 0-64 28.7-64 64L0 448c0 35.3 28.7 64 64 64l192 0c35.3 0 64-28.7 64-64l0-16-64 0 0 16-192 0 0-256 16 0 0-64-16 0z";
+}
+
+#[cfg(feature = "hypertext")]
+crate::hypertext_renderable!(Copy);
+
+#[derive(Default, Copy, Clone, PartialEq, Eq)]
 pub struct Gear;
 
 impl IconData for Gear {
@@ -95,6 +119,18 @@ impl IconData for Gear {
 
 #[cfg(feature = "hypertext")]
 crate::hypertext_renderable!(Gear);
+
+#[derive(Default, Copy, Clone, PartialEq, Eq)]
+pub struct GripLinesVertical;
+
+impl IconData for GripLinesVertical {
+    const NAME: &'static str = "grip-lines-vertical";
+    const VIEW_BOX: &'static str = "0 0 512 512";
+    const PATH_DATA: &'static str = "M195.1 9.5C198.1-5.3 211.2-16 226.4-16l59.8 0c15.2 0 28.3 10.7 31.3 25.5L332 79.5c14.1 6 27.3 13.7 39.3 22.8l67.8-22.5c14.4-4.8 30.2 1.2 37.8 14.4l29.9 51.8c7.6 13.2 4.9 29.8-6.5 39.9L447 233.3c.9 7.4 1.3 15 1.3 22.7s-.5 15.3-1.3 22.7l53.4 47.5c11.4 10.1 14 26.8 6.5 39.9l-29.9 51.8c-7.6 13.1-23.4 19.2-37.8 14.4l-67.8-22.5c-12.1 9.1-25.3 16.7-39.3 22.8l-14.4 69.9c-3.1 14.9-16.2 25.5-31.3 25.5l-59.8 0c-15.2 0-28.3-10.7-31.3-25.5l-14.4-69.9c-14.1-6-27.2-13.7-39.3-22.8L73.5 432.3c-14.4 4.8-30.2-1.2-37.8-14.4L5.8 366.1c-7.6-13.2-4.9-29.8 6.5-39.9l53.4-47.5c-.9-7.4-1.3-15-1.3-22.7s.5-15.3 1.3-22.7L12.3 185.8c-11.4-10.1-14-26.8-6.5-39.9L35.7 94.1c7.6-13.2 23.4-19.2 37.8-14.4l67.8 22.5c12.1-9.1 25.3-16.7 39.3-22.8L195.1 9.5zM256.3 336a80 80 0 1 0 -.6-160 80 80 0 1 0 .6 160z";
+}
+
+#[cfg(feature = "hypertext")]
+crate::hypertext_renderable!(GripLinesVertical);
 
 #[derive(Default, Copy, Clone, PartialEq, Eq)]
 pub struct Hashtag;
@@ -143,3 +179,15 @@ impl IconData for Xmark {
 
 #[cfg(feature = "hypertext")]
 crate::hypertext_renderable!(Xmark);
+
+#[derive(Default, Copy, Clone, PartialEq, Eq)]
+pub struct XmarkCircle;
+
+impl IconData for XmarkCircle {
+    const NAME: &'static str = "xmark-circle";
+    const VIEW_BOX: &'static str = "0 0 512 512";
+    const PATH_DATA: &'static str = "M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM167 167c9.4-9.4 24.6-9.4 33.9 0l55 55 55-55c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-55 55 55 55c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-55-55-55 55c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l55-55-55-55c-9.4-9.4-9.4-24.6 0-33.9z";
+}
+
+#[cfg(feature = "hypertext")]
+crate::hypertext_renderable!(XmarkCircle);
