@@ -18,3 +18,15 @@ impl<I: IconData> HypertextSvgIcon for I {
         }
     }
 }
+
+#[macro_export]
+macro_rules! hypertext_renderable {
+    ($type_name:ty) => {
+        impl ::hypertext::Renderable for $type_name {
+            fn render_to(&self, buffer: &mut ::hypertext::Buffer<::hypertext::context::Node>) {
+                use $crate::hypertext::HypertextSvgIcon;
+                <$type_name>::svg().render_to(buffer);
+            }
+        }
+    };
+}
