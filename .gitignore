@@ -1,7 +1,8 @@
 **/target/
 **/*.rs.bk
-tmp/
+Cargo.lock
 
+tmp/
 NOTES.*
 
 **/.idea

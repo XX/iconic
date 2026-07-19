@@ -4,5 +4,14 @@ version = "0.1.0"
 edition = "2024"
 license = "MIT OR Apache-2.0"
 
-[dependencies] 
-hypertext = { version = "0.12" }
+[features]
+default = []
+text = []
+hypertext = ["dep:hypertext"]
+fontawesome = ["fontawesome-brand", "fontawesome-regular", "fontawesome-solid"]
+fontawesome-brand = []
+fontawesome-regular = []
+fontawesome-solid = []
+
+[dependencies]
+hypertext = { git = "https://github.com/vidhanio/hypertext.git", version = "0.12", optional = true }
