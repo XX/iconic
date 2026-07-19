@@ -12,6 +12,8 @@ fontawesome = ["fontawesome-brand", "fontawesome-regular", "fontawesome-solid"]
 fontawesome-brand = []
 fontawesome-regular = []
 fontawesome-solid = []
+fontawesome-ext = ["fontawesome-ext-regular"]
+fontawesome-ext-regular = []
 
 [dependencies]
 hypertext = { git = "https://github.com/vidhanio/hypertext.git", version = "0.12", optional = true }
