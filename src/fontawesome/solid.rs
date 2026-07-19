@@ -1,6 +1,138 @@
 use crate::icon::IconData;
 
 #[derive(Default, Copy, Clone, PartialEq, Eq)]
+pub struct Ban;
+
+impl IconData for Ban {
+    const NAME: &'static str = "ban";
+    const VIEW_BOX: &'static str = "0 0 512 512";
+    const PATH_DATA: &'static str = "M367.2 412.5L99.5 144.8c-22.4 31.4-35.5 69.8-35.5 111.2 0 106 86 192 192 192 41.5 0 79.9-13.1 111.2-35.5zm45.3-45.3c22.4-31.4 35.5-69.8 35.5-111.2 0-106-86-192-192-192-41.5 0-79.9 13.1-111.2 35.5L412.5 367.2zM0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0z";
+}
+
+#[cfg(feature = "hypertext")]
+crate::hypertext_renderable!(Ban);
+
+#[derive(Default, Copy, Clone, PartialEq, Eq)]
+pub struct Bookmark;
+
+impl IconData for Bookmark {
+    const NAME: &'static str = "bookmark";
+    const VIEW_BOX: &'static str = "0 0 384 512";
+    const PATH_DATA: &'static str = "M64 0C28.7 0 0 28.7 0 64L0 480c0 11.5 6.2 22.2 16.2 27.8s22.3 5.5 32.2-.4L192 421.3 335.5 507.4c9.9 5.9 22.2 6.1 32.2 .4S384 491.5 384 480l0-416c0-35.3-28.7-64-64-64L64 0z";
+}
+
+#[cfg(feature = "hypertext")]
+crate::hypertext_renderable!(Bookmark);
+
+#[derive(Default, Copy, Clone, PartialEq, Eq)]
+pub struct Check;
+
+impl IconData for Check {
+    const NAME: &'static str = "check";
+    const VIEW_BOX: &'static str = "0 0 448 512";
+    const PATH_DATA: &'static str = "M434.8 70.1c14.3 10.4 17.5 30.4 7.1 44.7l-256 352c-5.5 7.6-14 12.3-23.4 13.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l101.5 101.5 234-321.7c10.4-14.3 30.4-17.5 44.7-7.1z";
+}
+
+#[cfg(feature = "hypertext")]
+crate::hypertext_renderable!(Check);
+
+#[derive(Default, Copy, Clone, PartialEq, Eq)]
+pub struct ChevronDown;
+
+impl IconData for ChevronDown {
+    const NAME: &'static str = "chevron-down";
+    const VIEW_BOX: &'static str = "0 0 448 512";
+    const PATH_DATA: &'static str = "M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z";
+}
+
+#[cfg(feature = "hypertext")]
+crate::hypertext_renderable!(ChevronDown);
+
+#[derive(Default, Copy, Clone, PartialEq, Eq)]
+pub struct CircleCheck;
+
+impl IconData for CircleCheck {
+    const NAME: &'static str = "circle-check";
+    const VIEW_BOX: &'static str = "0 0 512 512";
+    const PATH_DATA: &'static str = "M256 512a256 256 0 1 1 0-512 256 256 0 1 1 0 512zM374 145.7c-10.7-7.8-25.7-5.4-33.5 5.3L221.1 315.2 169 263.1c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l72 72c5 5 11.8 7.5 18.8 7s13.4-4.1 17.5-9.8L379.3 179.2c7.8-10.7 5.4-25.7-5.3-33.5z";
+}
+
+#[cfg(feature = "hypertext")]
+crate::hypertext_renderable!(CircleCheck);
+
+#[derive(Default, Copy, Clone, PartialEq, Eq)]
+pub struct CircleExclamation;
+
+impl IconData for CircleExclamation {
+    const NAME: &'static str = "circle-exclamation";
+    const VIEW_BOX: &'static str = "0 0 512 512";
+    const PATH_DATA: &'static str = "M256 512a256 256 0 1 1 0-512 256 256 0 1 1 0 512zm0-192a32 32 0 1 0 0 64 32 32 0 1 0 0-64zm0-192c-18.2 0-32.7 15.5-31.4 33.7l7.4 104c.9 12.6 11.4 22.3 23.9 22.3 12.6 0 23-9.7 23.9-22.3l7.4-104c1.3-18.2-13.1-33.7-31.4-33.7z";
+}
+
+#[cfg(feature = "hypertext")]
+crate::hypertext_renderable!(CircleExclamation);
+
+#[derive(Default, Copy, Clone, PartialEq, Eq)]
+pub struct CircleInfo;
+
+impl IconData for CircleInfo {
+    const NAME: &'static str = "circle-info";
+    const VIEW_BOX: &'static str = "0 0 512 512";
+    const PATH_DATA: &'static str = "M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM224 160a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm-8 64l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24z";
+}
+
+#[cfg(feature = "hypertext")]
+crate::hypertext_renderable!(CircleInfo);
+
+#[derive(Default, Copy, Clone, PartialEq, Eq)]
+pub struct Gear;
+
+impl IconData for Gear {
+    const NAME: &'static str = "gear";
+    const VIEW_BOX: &'static str = "0 0 512 512";
+    const PATH_DATA: &'static str = "M195.1 9.5C198.1-5.3 211.2-16 226.4-16l59.8 0c15.2 0 28.3 10.7 31.3 25.5L332 79.5c14.1 6 27.3 13.7 39.3 22.8l67.8-22.5c14.4-4.8 30.2 1.2 37.8 14.4l29.9 51.8c7.6 13.2 4.9 29.8-6.5 39.9L447 233.3c.9 7.4 1.3 15 1.3 22.7s-.5 15.3-1.3 22.7l53.4 47.5c11.4 10.1 14 26.8 6.5 39.9l-29.9 51.8c-7.6 13.1-23.4 19.2-37.8 14.4l-67.8-22.5c-12.1 9.1-25.3 16.7-39.3 22.8l-14.4 69.9c-3.1 14.9-16.2 25.5-31.3 25.5l-59.8 0c-15.2 0-28.3-10.7-31.3-25.5l-14.4-69.9c-14.1-6-27.2-13.7-39.3-22.8L73.5 432.3c-14.4 4.8-30.2-1.2-37.8-14.4L5.8 366.1c-7.6-13.2-4.9-29.8 6.5-39.9l53.4-47.5c-.9-7.4-1.3-15-1.3-22.7s.5-15.3 1.3-22.7L12.3 185.8c-11.4-10.1-14-26.8-6.5-39.9L35.7 94.1c7.6-13.2 23.4-19.2 37.8-14.4l67.8 22.5c12.1-9.1 25.3-16.7 39.3-22.8L195.1 9.5zM256.3 336a80 80 0 1 0 -.6-160 80 80 0 1 0 .6 160z";
+}
+
+#[cfg(feature = "hypertext")]
+crate::hypertext_renderable!(Gear);
+
+#[derive(Default, Copy, Clone, PartialEq, Eq)]
+pub struct Hashtag;
+
+impl IconData for Hashtag {
+    const NAME: &'static str = "hashtag";
+    const VIEW_BOX: &'static str = "0 0 512 512";
+    const PATH_DATA: &'static str = "M214.7 .7c17.3 3.7 28.3 20.7 24.6 38l-19.1 89.3 126.5 0 22-102.7C372.4 8 389.4-3 406.7 .7s28.3 20.7 24.6 38L412.2 128 480 128c17.7 0 32 14.3 32 32s-14.3 32-32 32l-81.6 0-27.4 128 67.8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-81.6 0-22 102.7c-3.7 17.3-20.7 28.3-38 24.6s-28.3-20.7-24.6-38l19.1-89.3-126.5 0-22 102.7c-3.7 17.3-20.7 28.3-38 24.6s-28.3-20.7-24.6-38L99.8 384 32 384c-17.7 0-32-14.3-32-32s14.3-32 32-32l81.6 0 27.4-128-67.8 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l81.6 0 22-102.7C180.4 8 197.4-3 214.7 .7zM206.4 192l-27.4 128 126.5 0 27.4-128-126.5 0z";
+}
+
+#[cfg(feature = "hypertext")]
+crate::hypertext_renderable!(Hashtag);
+
+#[derive(Default, Copy, Clone, PartialEq, Eq)]
+pub struct PuzzlePiece;
+
+impl IconData for PuzzlePiece {
+    const NAME: &'static str = "puzzle-piece";
+    const VIEW_BOX: &'static str = "0 0 512 512";
+    const PATH_DATA: &'static str = "M224 0c35.3 0 64 21.5 64 48 0 10.4-4.4 20-12 27.9-6.6 6.9-12 15.3-12 24.9 0 15 12.2 27.2 27.2 27.2l44.8 0c26.5 0 48 21.5 48 48l0 44.8c0 15 12.2 27.2 27.2 27.2 9.5 0 18-5.4 24.9-12 7.9-7.5 17.5-12 27.9-12 26.5 0 48 28.7 48 64s-21.5 64-48 64c-10.4 0-20.1-4.4-27.9-12-6.9-6.6-15.3-12-24.9-12-15 0-27.2 12.2-27.2 27.2L384 464c0 26.5-21.5 48-48 48l-56.8 0c-12.8 0-23.2-10.4-23.2-23.2 0-9.2 5.8-17.3 13.2-22.8 11.6-8.7 18.8-20.7 18.8-34 0-26.5-28.7-48-64-48s-64 21.5-64 48c0 13.3 7.2 25.3 18.8 34 7.4 5.5 13.2 13.5 13.2 22.8 0 12.8-10.4 23.2-23.2 23.2L48 512c-26.5 0-48-21.5-48-48L0 343.2c0-12.8 10.4-23.2 23.2-23.2 9.2 0 17.3 5.8 22.8 13.2 8.7 11.6 20.7 18.8 34 18.8 26.5 0 48-28.7 48-64s-21.5-64-48-64c-13.3 0-25.3 7.2-34 18.8-5.5 7.4-13.5 13.2-22.8 13.2-12.8 0-23.2-10.4-23.2-23.2L0 176c0-26.5 21.5-48 48-48l108.8 0c15 0 27.2-12.2 27.2-27.2 0-9.5-5.4-18-12-24.9-7.5-7.9-12-17.5-12-27.9 0-26.5 28.7-48 64-48z";
+}
+
+#[cfg(feature = "hypertext")]
+crate::hypertext_renderable!(PuzzlePiece);
+
+#[derive(Default, Copy, Clone, PartialEq, Eq)]
+pub struct TriangleExclamation;
+
+impl IconData for TriangleExclamation {
+    const NAME: &'static str = "triangle-exclamation";
+    const VIEW_BOX: &'static str = "0 0 512 512";
+    const PATH_DATA: &'static str = "M256 0c14.7 0 28.2 8.1 35.2 21l216 400c6.7 12.4 6.4 27.4-.8 39.5S486.1 480 472 480L40 480c-14.1 0-27.2-7.4-34.4-19.5s-7.5-27.1-.8-39.5l216-400c7-12.9 20.5-21 35.2-21zm0 352a32 32 0 1 0 0 64 32 32 0 1 0 0-64zm0-192c-18.2 0-32.7 15.5-31.4 33.7l7.4 104c.9 12.5 11.4 22.3 23.9 22.3 12.6 0 23-9.7 23.9-22.3l7.4-104c1.3-18.2-13.1-33.7-31.4-33.7z";
+}
+
+#[cfg(feature = "hypertext")]
+crate::hypertext_renderable!(TriangleExclamation);
+
+#[derive(Default, Copy, Clone, PartialEq, Eq)]
 pub struct Xmark;
 
 impl IconData for Xmark {
