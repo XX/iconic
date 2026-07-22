@@ -16,4 +16,4 @@ fontawesome-ext = ["fontawesome-ext-regular"]
 fontawesome-ext-regular = []
 
 [dependencies]
-hypertext = { git = "https://github.com/vidhanio/hypertext.git", version = "0.12", optional = true }
+hypertext = { git = "https://github.com/XX/hypertext.git", branch = "children-ref", version = "0.12", optional = true }
