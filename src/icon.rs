@@ -73,3 +73,22 @@ impl From<crate::fontawesome_ext::regular::Icon> for Icon {
         Self::FontawesomeExtRegular(icon.into())
     }
 }
+
+#[cfg(feature = "hypertext")]
+impl hypertext::Renderable for Icon {
+    fn render_to(&self, buffer: &mut hypertext::Buffer<hypertext::context::Node>) {
+        match self {
+            #[cfg(any(feature = "fontawesome", feature = "fontawesome-brand"))]
+            Self::FontawesomeBrand(icon) => icon.render_to(buffer),
+
+            #[cfg(any(feature = "fontawesome", feature = "fontawesome-solid"))]
+            Self::FontawesomeSolid(icon) => icon.render_to(buffer),
+
+            #[cfg(any(feature = "fontawesome", feature = "fontawesome-regular"))]
+            Self::FontawesomeRegular(icon) => icon.render_to(buffer),
+
+            #[cfg(any(feature = "fontawesome-ext", feature = "fontawesome-ext-regular"))]
+            Self::FontawesomeExtRegular(icon) => icon.render_to(buffer),
+        }
+    }
+}

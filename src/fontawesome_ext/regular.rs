@@ -27,3 +27,14 @@ pub enum Icon {
     GripLinesVertical(GripLinesVertical),
     Hashtag(Hashtag),
 }
+
+#[cfg(feature = "hypertext")]
+impl hypertext::Renderable for Icon {
+    fn render_to(&self, buffer: &mut hypertext::Buffer<hypertext::context::Node>) {
+        match self {
+            Self::ChevronDown(icon) => icon.render_to(buffer),
+            Self::GripLinesVertical(icon) => icon.render_to(buffer),
+            Self::Hashtag(icon) => icon.render_to(buffer),
+        }
+    }
+}

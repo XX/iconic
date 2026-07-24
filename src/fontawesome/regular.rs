@@ -59,3 +59,18 @@ pub enum Icon {
     PenToSquare(PenToSquare),
     XmarkCircle(XmarkCircle),
 }
+
+#[cfg(feature = "hypertext")]
+impl hypertext::Renderable for Icon {
+    fn render_to(&self, buffer: &mut hypertext::Buffer<hypertext::context::Node>) {
+        match self {
+            Self::Bookmark(icon) => icon.render_to(buffer),
+            Self::CircleCheck(icon) => icon.render_to(buffer),
+            Self::CircleXmark(icon) => icon.render_to(buffer),
+            Self::Copy(icon) => icon.render_to(buffer),
+            Self::House(icon) => icon.render_to(buffer),
+            Self::PenToSquare(icon) => icon.render_to(buffer),
+            Self::XmarkCircle(icon) => icon.render_to(buffer),
+        }
+    }
+}

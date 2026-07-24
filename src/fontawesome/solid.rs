@@ -147,3 +147,29 @@ pub enum Icon {
     Xmark(Xmark),
     XmarkCircle(XmarkCircle),
 }
+
+#[cfg(feature = "hypertext")]
+impl hypertext::Renderable for Icon {
+    fn render_to(&self, buffer: &mut hypertext::Buffer<hypertext::context::Node>) {
+        match self {
+            Self::Ban(icon) => icon.render_to(buffer),
+            Self::Bookmark(icon) => icon.render_to(buffer),
+            Self::Check(icon) => icon.render_to(buffer),
+            Self::ChevronDown(icon) => icon.render_to(buffer),
+            Self::CircleCheck(icon) => icon.render_to(buffer),
+            Self::CircleExclamation(icon) => icon.render_to(buffer),
+            Self::CircleInfo(icon) => icon.render_to(buffer),
+            Self::CircleXmark(icon) => icon.render_to(buffer),
+            Self::Copy(icon) => icon.render_to(buffer),
+            Self::Gear(icon) => icon.render_to(buffer),
+            Self::GripLinesVertical(icon) => icon.render_to(buffer),
+            Self::Hashtag(icon) => icon.render_to(buffer),
+            Self::House(icon) => icon.render_to(buffer),
+            Self::PenToSquare(icon) => icon.render_to(buffer),
+            Self::PuzzlePiece(icon) => icon.render_to(buffer),
+            Self::TriangleExclamation(icon) => icon.render_to(buffer),
+            Self::Xmark(icon) => icon.render_to(buffer),
+            Self::XmarkCircle(icon) => icon.render_to(buffer),
+        }
+    }
+}

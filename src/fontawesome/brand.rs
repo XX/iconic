@@ -11,3 +11,12 @@ crate::define_icon!(
 pub enum Icon {
     Github(Github),
 }
+
+#[cfg(feature = "hypertext")]
+impl hypertext::Renderable for Icon {
+    fn render_to(&self, buffer: &mut hypertext::Buffer<hypertext::context::Node>) {
+        match self {
+            Self::Github(icon) => icon.render_to(buffer),
+        }
+    }
+}
