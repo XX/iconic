@@ -31,7 +31,7 @@ macro_rules! define_icon {
     };
 }
 
-#[derive(Debug)]
+#[derive(Debug, Copy, Clone, PartialEq, Eq)]
 pub enum Icon {
     #[cfg(any(feature = "fontawesome", feature = "fontawesome-brand"))]
     FontawesomeBrand(crate::fontawesome::brand::Icon),
