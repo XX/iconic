@@ -17,4 +17,4 @@ fontawesome-ext-regular = []
 
 [dependencies]
 derive_more = { version = "2.1", features = ["from"] }
-hypertext = { git = "https://github.com/XX/hypertext", branch = "children-ref", version = "0.12", optional = true }
+hypertext = { git = "https://github.com/XX/hypertext", branch = "dev", optional = true }
