@@ -8,6 +8,13 @@ crate::define_icon!(
 );
 
 crate::define_icon!(
+    Bars,
+    "bars",
+    "0 0 448 512",
+    "M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
+);
+
+crate::define_icon!(
     Bookmark,
     "bookmark",
     "0 0 384 512",
@@ -129,6 +136,7 @@ crate::define_icon!(
 #[derive(Debug, Copy, Clone, PartialEq, Eq, From)]
 pub enum Icon {
     Ban(Ban),
+    Bars(Bars),
     Bookmark(Bookmark),
     Check(Check),
     ChevronDown(ChevronDown),
@@ -153,6 +161,7 @@ impl hypertext::Renderable for Icon {
     fn render_to(&self, buffer: &mut hypertext::Buffer<hypertext::context::Node>) {
         match self {
             Self::Ban(icon) => icon.render_to(buffer),
+            Self::Bars(icon) => icon.render_to(buffer),
             Self::Bookmark(icon) => icon.render_to(buffer),
             Self::Check(icon) => icon.render_to(buffer),
             Self::ChevronDown(icon) => icon.render_to(buffer),
