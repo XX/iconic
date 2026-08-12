@@ -8,6 +8,27 @@ crate::define_icon!(
 );
 
 crate::define_icon!(
+    ChevronLeft,
+    "chevron-left",
+    "0 0 256 512",
+    "M11.06 272.94a24 24 0 0 1 0-33.88l200-200a24 24 0 0 1 33.94 33.94l-183 183 183 183a24 24 0 0 1-33.94 33.94z"
+);
+
+crate::define_icon!(
+    ChevronRight,
+    "chevron-right",
+    "0 0 256 512",
+    "M244.94 272.94a24 24 0 0 0 0-33.88l-200-200a24 24 0 0 0-33.94 33.94l183 183-183 183a24 24 0 0 0 33.94 33.94z"
+);
+
+crate::define_icon!(
+    ChevronUp,
+    "chevron-up",
+    "0 0 448 512",
+    "M207.5 103a24 24 0 0 1 33.9 0l200 200a24 24 0 0 1-33.94 33.94l-183-183-183 183a24 24 0 0 1-33.94-33.94z"
+);
+
+crate::define_icon!(
     GripLinesVertical,
     "grip-lines-vertical",
     "0 0 192 512",
@@ -24,6 +45,9 @@ crate::define_icon!(
 #[derive(Debug, Copy, Clone, PartialEq, Eq, From)]
 pub enum Icon {
     ChevronDown(ChevronDown),
+    ChevronLeft(ChevronLeft),
+    ChevronRight(ChevronRight),
+    ChevronUp(ChevronUp),
     GripLinesVertical(GripLinesVertical),
     Hashtag(Hashtag),
 }
@@ -33,6 +57,9 @@ impl hypertext::Renderable for Icon {
     fn render_to(&self, buffer: &mut hypertext::Buffer<hypertext::context::Node>) {
         match self {
             Self::ChevronDown(icon) => icon.render_to(buffer),
+            Self::ChevronLeft(icon) => icon.render_to(buffer),
+            Self::ChevronRight(icon) => icon.render_to(buffer),
+            Self::ChevronUp(icon) => icon.render_to(buffer),
             Self::GripLinesVertical(icon) => icon.render_to(buffer),
             Self::Hashtag(icon) => icon.render_to(buffer),
         }

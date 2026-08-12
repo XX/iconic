@@ -36,6 +36,27 @@ crate::define_icon!(
 );
 
 crate::define_icon!(
+    ChevronLeft,
+    "chevron-left",
+    "0 0 320 512",
+    "M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"
+);
+
+crate::define_icon!(
+    ChevronRight,
+    "chevron-right",
+    "0 0 320 512",
+    "M311.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L243.2 256 73.9 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+);
+
+crate::define_icon!(
+    ChevronUp,
+    "chevron-up",
+    "0 0 448 512",
+    "M201.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 173.3 54.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"
+);
+
+crate::define_icon!(
     CircleCheck,
     "circle-check",
     "0 0 512 512",
@@ -140,6 +161,9 @@ pub enum Icon {
     Bookmark(Bookmark),
     Check(Check),
     ChevronDown(ChevronDown),
+    ChevronLeft(ChevronLeft),
+    ChevronRight(ChevronRight),
+    ChevronUp(ChevronUp),
     CircleCheck(CircleCheck),
     CircleExclamation(CircleExclamation),
     CircleInfo(CircleInfo),
@@ -165,6 +189,9 @@ impl hypertext::Renderable for Icon {
             Self::Bookmark(icon) => icon.render_to(buffer),
             Self::Check(icon) => icon.render_to(buffer),
             Self::ChevronDown(icon) => icon.render_to(buffer),
+            Self::ChevronLeft(icon) => icon.render_to(buffer),
+            Self::ChevronRight(icon) => icon.render_to(buffer),
+            Self::ChevronUp(icon) => icon.render_to(buffer),
             Self::CircleCheck(icon) => icon.render_to(buffer),
             Self::CircleExclamation(icon) => icon.render_to(buffer),
             Self::CircleInfo(icon) => icon.render_to(buffer),
