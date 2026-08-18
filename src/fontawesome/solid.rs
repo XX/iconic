@@ -120,10 +120,24 @@ crate::define_icon!(
 );
 
 crate::define_icon!(
+    Minus,
+    "minus",
+    "0 0 448 512",
+    "M0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32z"
+);
+
+crate::define_icon!(
     PenToSquare,
     "pen-to-square",
     "0 0 512 512",
     "M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L368 46.1 465.9 144 490.3 119.6c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L432 177.9 334.1 80 172.4 241.7zM96 64C43 64 0 107 0 160L0 416c0 53 43 96 96 96l256 0c53 0 96-43 96-96l0-96c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 96c0 17.7-14.3 32-32 32L96 448c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 64z"
+);
+
+crate::define_icon!(
+    Plus,
+    "plus",
+    "0 0 448 512",
+    "M256 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 160-160 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l160 0 0 160c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160 160 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-160 0 0-160z"
 );
 
 crate::define_icon!(
@@ -173,7 +187,9 @@ pub enum Icon {
     GripLinesVertical(GripLinesVertical),
     Hashtag(Hashtag),
     House(House),
+    Minus(Minus),
     PenToSquare(PenToSquare),
+    Plus(Plus),
     PuzzlePiece(PuzzlePiece),
     TriangleExclamation(TriangleExclamation),
     Xmark(Xmark),
@@ -201,7 +217,9 @@ impl hypertext::Renderable for Icon {
             Self::GripLinesVertical(icon) => icon.render_to(buffer),
             Self::Hashtag(icon) => icon.render_to(buffer),
             Self::House(icon) => icon.render_to(buffer),
+            Self::Minus(icon) => icon.render_to(buffer),
             Self::PenToSquare(icon) => icon.render_to(buffer),
+            Self::Plus(icon) => icon.render_to(buffer),
             Self::PuzzlePiece(icon) => icon.render_to(buffer),
             Self::TriangleExclamation(icon) => icon.render_to(buffer),
             Self::Xmark(icon) => icon.render_to(buffer),
