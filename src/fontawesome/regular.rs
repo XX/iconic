@@ -43,6 +43,13 @@ crate::define_icon!(
 );
 
 crate::define_icon!(
+    User,
+    "user",
+    "0 0 448 512",
+    "M144 128a80 80 0 1 1 160 0 80 80 0 1 1 -160 0zm208 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0zM48 480c0-70.7 57.3-128 128-128l96 0c70.7 0 128 57.3 128 128l0 8c0 13.3 10.7 24 24 24s24-10.7 24-24l0-8c0-97.2-78.8-176-176-176l-96 0C78.8 304 0 382.8 0 480l0 8c0 13.3 10.7 24 24 24s24-10.7 24-24l0-8z"
+);
+
+crate::define_icon!(
     XmarkCircle,
     "xmark-circle",
     "0 0 512 512",
@@ -57,6 +64,7 @@ pub enum Icon {
     Copy(Copy),
     House(House),
     PenToSquare(PenToSquare),
+    User(User),
     XmarkCircle(XmarkCircle),
 }
 
@@ -70,6 +78,7 @@ impl hypertext::Renderable for Icon {
             Self::Copy(icon) => icon.render_to(buffer),
             Self::House(icon) => icon.render_to(buffer),
             Self::PenToSquare(icon) => icon.render_to(buffer),
+            Self::User(icon) => icon.render_to(buffer),
             Self::XmarkCircle(icon) => icon.render_to(buffer),
         }
     }

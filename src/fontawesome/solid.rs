@@ -155,6 +155,13 @@ crate::define_icon!(
 );
 
 crate::define_icon!(
+    User,
+    "user",
+    "0 0 448 512",
+    "M224 248a120 120 0 1 0 0-240 120 120 0 1 0 0 240zm-29.7 56C95.8 304 16 383.8 16 482.3 16 498.7 29.3 512 45.7 512l356.6 0c16.4 0 29.7-13.3 29.7-29.7 0-98.5-79.8-178.3-178.3-178.3l-59.4 0z"
+);
+
+crate::define_icon!(
     Xmark,
     "xmark",
     "0 0 384 512",
@@ -192,6 +199,7 @@ pub enum Icon {
     Plus(Plus),
     PuzzlePiece(PuzzlePiece),
     TriangleExclamation(TriangleExclamation),
+    User(User),
     Xmark(Xmark),
     XmarkCircle(XmarkCircle),
 }
@@ -222,6 +230,7 @@ impl hypertext::Renderable for Icon {
             Self::Plus(icon) => icon.render_to(buffer),
             Self::PuzzlePiece(icon) => icon.render_to(buffer),
             Self::TriangleExclamation(icon) => icon.render_to(buffer),
+            Self::User(icon) => icon.render_to(buffer),
             Self::Xmark(icon) => icon.render_to(buffer),
             Self::XmarkCircle(icon) => icon.render_to(buffer),
         }
