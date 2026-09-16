@@ -12,8 +12,9 @@ fontawesome = ["fontawesome-brand", "fontawesome-regular", "fontawesome-solid"]
 fontawesome-brand = []
 fontawesome-regular = []
 fontawesome-solid = []
-fontawesome-ext = ["fontawesome-ext-regular"]
+fontawesome-ext = ["fontawesome-ext-regular", "fontawesome-ext-solid"]
 fontawesome-ext-regular = []
+fontawesome-ext-solid = []
 
 [dependencies]
 derive_more = { version = "2.1", features = ["from"] }

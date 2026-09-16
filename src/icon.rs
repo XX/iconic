@@ -44,6 +44,9 @@ pub enum Icon {
 
     #[cfg(any(feature = "fontawesome-ext", feature = "fontawesome-ext-regular"))]
     FontawesomeExtRegular(crate::fontawesome_ext::regular::Icon),
+
+    #[cfg(any(feature = "fontawesome-ext", feature = "fontawesome-ext-solid"))]
+    FontawesomeExtSolid(crate::fontawesome_ext::solid::Icon),
 }
 
 #[cfg(any(feature = "fontawesome", feature = "fontawesome-brand"))]
@@ -74,6 +77,13 @@ impl From<crate::fontawesome_ext::regular::Icon> for Icon {
     }
 }
 
+#[cfg(any(feature = "fontawesome-ext", feature = "fontawesome-ext-solid"))]
+impl From<crate::fontawesome_ext::solid::Icon> for Icon {
+    fn from(icon: crate::fontawesome_ext::solid::Icon) -> Self {
+        Self::FontawesomeExtSolid(icon.into())
+    }
+}
+
 #[cfg(feature = "hypertext")]
 impl hypertext::Renderable for Icon {
     fn render_to(&self, buffer: &mut hypertext::Buffer<hypertext::context::Node>) {
@@ -89,6 +99,9 @@ impl hypertext::Renderable for Icon {
 
             #[cfg(any(feature = "fontawesome-ext", feature = "fontawesome-ext-regular"))]
             Self::FontawesomeExtRegular(icon) => icon.render_to(buffer),
+
+            #[cfg(any(feature = "fontawesome-ext", feature = "fontawesome-ext-solid"))]
+            Self::FontawesomeExtSolid(icon) => icon.render_to(buffer),
         }
     }
 }
