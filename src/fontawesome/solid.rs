@@ -43,6 +43,13 @@ crate::define_icon!(
 );
 
 crate::define_icon!(
+    Bold,
+    "bold",
+    "0 0 384 512",
+    "M32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l32 0 0 320-32 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l224 0c70.7 0 128-57.3 128-128 0-46.5-24.8-87.3-62-109.7 18.7-22.3 30-51 30-82.3 0-70.7-57.3-128-128-128L32 32zM288 160c0 35.3-28.7 64-64 64l-96 0 0-128 96 0c35.3 0 64 28.7 64 64zM128 416l0-128 128 0c35.3 0 64 28.7 64 64s-28.7 64-64 64l-128 0z"
+);
+
+crate::define_icon!(
     Bookmark,
     "bookmark",
     "0 0 384 512",
@@ -148,6 +155,13 @@ crate::define_icon!(
 );
 
 crate::define_icon!(
+    Italic,
+    "italic",
+    "0 0 384 512",
+    "M128 64c0-17.7 14.3-32 32-32l192 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-58.7 0-133.3 320 64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 480c-17.7 0-32-14.3-32-32s14.3-32 32-32l58.7 0 133.3-320-64 0c-17.7 0-32-14.3-32-32z"
+);
+
+crate::define_icon!(
     Minus,
     "minus",
     "0 0 448 512",
@@ -176,10 +190,45 @@ crate::define_icon!(
 );
 
 crate::define_icon!(
+    Redo,
+    "redo",
+    "0 0 512 512",
+    "M436.7 74.7L448 85.4 448 32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 128c0 17.7-14.3 32-32 32l-128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l47.9 0-7.6-7.2c-.2-.2-.4-.4-.6-.6-75-75-196.5-75-271.5 0s-75 196.5 0 271.5 196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c99.9-99.9 261.7-100 361.7-.3z"
+);
+
+crate::define_icon!(
+    RedoAlt,
+    "redo-alt",
+    "0 0 512 512",
+    "M488 192l-144 0c-9.7 0-18.5-5.8-22.2-14.8s-1.7-19.3 5.2-26.2l46.7-46.7c-75.3-58.6-184.3-53.3-253.5 15.9-75 75-75 196.5 0 271.5s196.5 75 271.5 0c8.2-8.2 15.5-16.9 21.9-26.1 10.1-14.5 30.1-18 44.6-7.9s18 30.1 7.9 44.6c-8.5 12.2-18.2 23.8-29.1 34.7-100 100-262.1 100-362 0S-25 175 75 75c94.3-94.3 243.7-99.6 344.3-16.2L471 7c6.9-6.9 17.2-8.9 26.2-5.2S512 14.3 512 24l0 144c0 13.3-10.7 24-24 24z"
+);
+
+crate::define_icon!(
     TriangleExclamation,
     "triangle-exclamation",
     "0 0 512 512",
     "M256 0c14.7 0 28.2 8.1 35.2 21l216 400c6.7 12.4 6.4 27.4-.8 39.5S486.1 480 472 480L40 480c-14.1 0-27.2-7.4-34.4-19.5s-7.5-27.1-.8-39.5l216-400c7-12.9 20.5-21 35.2-21zm0 352a32 32 0 1 0 0 64 32 32 0 1 0 0-64zm0-192c-18.2 0-32.7 15.5-31.4 33.7l7.4 104c.9 12.5 11.4 22.3 23.9 22.3 12.6 0 23-9.7 23.9-22.3l7.4-104c1.3-18.2-13.1-33.7-31.4-33.7z"
+);
+
+crate::define_icon!(
+    Underline,
+    "underline",
+    "0 0 384 512",
+    "M0 32C0 14.3 14.3 0 32 0L96 0c17.7 0 32 14.3 32 32S113.7 64 96 64l0 160c0 53 43 96 96 96s96-43 96-96l0-160c-17.7 0-32-14.3-32-32S270.3 0 288 0l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l0 160c0 88.4-71.6 160-160 160S32 312.4 32 224L32 64C14.3 64 0 49.7 0 32zM0 480c0-17.7 14.3-32 32-32l320 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 512c-17.7 0-32-14.3-32-32z"
+);
+
+crate::define_icon!(
+    Undo,
+    "undo",
+    "0 0 512 512",
+    "M256 64c-56.8 0-107.9 24.7-143.1 64l47.1 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 192c-17.7 0-32-14.3-32-32L0 32C0 14.3 14.3 0 32 0S64 14.3 64 32l0 54.7C110.9 33.6 179.5 0 256 0 397.4 0 512 114.6 512 256S397.4 512 256 512c-87 0-163.9-43.4-210.1-109.7-10.1-14.5-6.6-34.4 7.9-44.6s34.4-6.6 44.6 7.9c34.8 49.8 92.4 82.3 157.6 82.3 106 0 192-86 192-192S362 64 256 64z"
+);
+
+crate::define_icon!(
+    UndoAlt,
+    "undo-alt",
+    "0 0 512 512",
+    "M24 192l144 0c9.7 0 18.5-5.8 22.2-14.8s1.7-19.3-5.2-26.2l-46.7-46.7c75.3-58.6 184.3-53.3 253.5 15.9 75 75 75 196.5 0 271.5s-196.5 75-271.5 0c-10.2-10.2-19-21.3-26.4-33-9.5-14.9-29.3-19.3-44.2-9.8s-19.3 29.3-9.8 44.2C49.7 408.7 61.4 423.5 75 437 175 537 337 537 437 437S537 175 437 75C342.8-19.3 193.3-24.7 92.7 58.8L41 7C34.1 .2 23.8-1.9 14.8 1.8S0 14.3 0 24L0 168c0 13.3 10.7 24 24 24z"
 );
 
 crate::define_icon!(
@@ -211,6 +260,7 @@ pub enum Icon {
     AlignRight(AlignRight),
     Ban(Ban),
     Bars(Bars),
+    Bold(Bold),
     Bookmark(Bookmark),
     Check(Check),
     ChevronDown(ChevronDown),
@@ -226,11 +276,17 @@ pub enum Icon {
     GripLinesVertical(GripLinesVertical),
     Hashtag(Hashtag),
     House(House),
+    Italic(Italic),
     Minus(Minus),
     PenToSquare(PenToSquare),
     Plus(Plus),
     PuzzlePiece(PuzzlePiece),
+    Redo(Redo),
+    RedoAlt(RedoAlt),
     TriangleExclamation(TriangleExclamation),
+    Underline(Underline),
+    Undo(Undo),
+    UndoAlt(UndoAlt),
     User(User),
     Xmark(Xmark),
     XmarkCircle(XmarkCircle),
@@ -246,6 +302,7 @@ impl hypertext::Renderable for Icon {
             Self::AlignRight(icon) => icon.render_to(buffer),
             Self::Ban(icon) => icon.render_to(buffer),
             Self::Bars(icon) => icon.render_to(buffer),
+            Self::Bold(icon) => icon.render_to(buffer),
             Self::Bookmark(icon) => icon.render_to(buffer),
             Self::Check(icon) => icon.render_to(buffer),
             Self::ChevronDown(icon) => icon.render_to(buffer),
@@ -261,11 +318,17 @@ impl hypertext::Renderable for Icon {
             Self::GripLinesVertical(icon) => icon.render_to(buffer),
             Self::Hashtag(icon) => icon.render_to(buffer),
             Self::House(icon) => icon.render_to(buffer),
+            Self::Italic(icon) => icon.render_to(buffer),
             Self::Minus(icon) => icon.render_to(buffer),
             Self::PenToSquare(icon) => icon.render_to(buffer),
             Self::Plus(icon) => icon.render_to(buffer),
             Self::PuzzlePiece(icon) => icon.render_to(buffer),
+            Self::Redo(icon) => icon.render_to(buffer),
+            Self::RedoAlt(icon) => icon.render_to(buffer),
             Self::TriangleExclamation(icon) => icon.render_to(buffer),
+            Self::Underline(icon) => icon.render_to(buffer),
+            Self::Undo(icon) => icon.render_to(buffer),
+            Self::UndoAlt(icon) => icon.render_to(buffer),
             Self::User(icon) => icon.render_to(buffer),
             Self::Xmark(icon) => icon.render_to(buffer),
             Self::XmarkCircle(icon) => icon.render_to(buffer),
