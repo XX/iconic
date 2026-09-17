@@ -1,6 +1,41 @@
 use derive_more::From;
 
 crate::define_icon!(
+    AlignCenter,
+    "align-center",
+    "0 0 448 512",
+    "M120 40h208a24 24 0 0 1 0 48H120a24 24 0 0 1 0-48z M24 168h400a24 24 0 0 1 0 48H24a24 24 0 0 1 0-48z M120 296h208a24 24 0 0 1 0 48H120a24 24 0 0 1 0-48z M24 424h400a24 24 0 0 1 0 48H24a24 24 0 0 1 0-48z"
+);
+
+crate::define_icon!(
+    AlignJustify,
+    "align-justify",
+    "0 0 448 512",
+    "M24 40h400a24 24 0 0 1 0 48H24a24 24 0 0 1 0-48z M24 168h400a24 24 0 0 1 0 48H24a24 24 0 0 1 0-48z M24 296h400a24 24 0 0 1 0 48H24a24 24 0 0 1 0-48z M24 424h400a24 24 0 0 1 0 48H24a24 24 0 0 1 0-48z"
+);
+
+crate::define_icon!(
+    AlignJustifyLeft,
+    "align-justify",
+    "0 0 448 512",
+    "M24 40h400a24 24 0 0 1 0 48H24a24 24 0 0 1 0-48z M24 168h400a24 24 0 0 1 0 48H24a24 24 0 0 1 0-48z M24 296h400a24 24 0 0 1 0 48H24a24 24 0 0 1 0-48z M24 424h208a24 24 0 0 1 0 48H24a24 24 0 0 1 0-48z"
+);
+
+crate::define_icon!(
+    AlignLeft,
+    "align-left",
+    "0 0 448 512",
+    "M24 40h240a24 24 0 0 1 0 48H24a24 24 0 0 1 0-48z M24 168h400a24 24 0 0 1 0 48H24a24 24 0 0 1 0-48z M24 296h240a24 24 0 0 1 0 48H24a24 24 0 0 1 0-48z M24 424h400a24 24 0 0 1 0 48H24a24 24 0 0 1 0-48z"
+);
+
+crate::define_icon!(
+    AlignRight,
+    "align-right",
+    "0 0 448 512",
+    "M184 40h240a24 24 0 0 1 0 48H184a24 24 0 0 1 0-48z M24 168h400a24 24 0 0 1 0 48H24a24 24 0 0 1 0-48z M184 296h240a24 24 0 0 1 0 48H184a24 24 0 0 1 0-48z M24 424h400a24 24 0 0 1 0 48H24a24 24 0 0 1 0-48z"
+);
+
+crate::define_icon!(
     ChevronDown,
     "chevron-down",
     "0 0 448 512",
@@ -58,6 +93,11 @@ crate::define_icon!(
 
 #[derive(Debug, Copy, Clone, PartialEq, Eq, From)]
 pub enum Icon {
+    AlignCenter(AlignCenter),
+    AlignJustify(AlignJustify),
+    AlignJustifyLeft(AlignJustifyLeft),
+    AlignLeft(AlignLeft),
+    AlignRight(AlignRight),
     ChevronDown(ChevronDown),
     ChevronLeft(ChevronLeft),
     ChevronRight(ChevronRight),
@@ -72,6 +112,11 @@ pub enum Icon {
 impl hypertext::Renderable for Icon {
     fn render_to(&self, buffer: &mut hypertext::Buffer<hypertext::context::Node>) {
         match self {
+            Self::AlignCenter(icon) => icon.render_to(buffer),
+            Self::AlignJustify(icon) => icon.render_to(buffer),
+            Self::AlignJustifyLeft(icon) => icon.render_to(buffer),
+            Self::AlignLeft(icon) => icon.render_to(buffer),
+            Self::AlignRight(icon) => icon.render_to(buffer),
             Self::ChevronDown(icon) => icon.render_to(buffer),
             Self::ChevronLeft(icon) => icon.render_to(buffer),
             Self::ChevronRight(icon) => icon.render_to(buffer),
