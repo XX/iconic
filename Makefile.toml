@@ -15,7 +15,7 @@ args = ["fmt", "--check"]
 [tasks.clippy]
 toolchain = "stable"
 command = "cargo"
-args = ["clippy", "--all-targets", "--", "-D", "warnings"]
+args = ["clippy", "--all-features", "--all-targets", "--", "-D", "warnings"]
 
 [tasks.lint]
 run_task = "clippy"

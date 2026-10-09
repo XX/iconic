@@ -52,35 +52,35 @@ pub enum Icon {
 #[cfg(any(feature = "fontawesome", feature = "fontawesome-brand"))]
 impl From<crate::fontawesome::brand::Icon> for Icon {
     fn from(icon: crate::fontawesome::brand::Icon) -> Self {
-        Self::FontawesomeBrand(icon.into())
+        Self::FontawesomeBrand(icon)
     }
 }
 
 #[cfg(any(feature = "fontawesome", feature = "fontawesome-regular"))]
 impl From<crate::fontawesome::regular::Icon> for Icon {
     fn from(icon: crate::fontawesome::regular::Icon) -> Self {
-        Self::FontawesomeRegular(icon.into())
+        Self::FontawesomeRegular(icon)
     }
 }
 
 #[cfg(any(feature = "fontawesome", feature = "fontawesome-solid"))]
 impl From<crate::fontawesome::solid::Icon> for Icon {
     fn from(icon: crate::fontawesome::solid::Icon) -> Self {
-        Self::FontawesomeSolid(icon.into())
+        Self::FontawesomeSolid(icon)
     }
 }
 
 #[cfg(any(feature = "fontawesome-ext", feature = "fontawesome-ext-regular"))]
 impl From<crate::fontawesome_ext::regular::Icon> for Icon {
     fn from(icon: crate::fontawesome_ext::regular::Icon) -> Self {
-        Self::FontawesomeExtRegular(icon.into())
+        Self::FontawesomeExtRegular(icon)
     }
 }
 
 #[cfg(any(feature = "fontawesome-ext", feature = "fontawesome-ext-solid"))]
 impl From<crate::fontawesome_ext::solid::Icon> for Icon {
     fn from(icon: crate::fontawesome_ext::solid::Icon) -> Self {
-        Self::FontawesomeExtSolid(icon.into())
+        Self::FontawesomeExtSolid(icon)
     }
 }
 
