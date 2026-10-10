@@ -127,6 +127,20 @@ crate::define_icon!(
 );
 
 crate::define_icon!(
+    Ellipsis,
+    "ellipsis",
+    "0 0 448 512",
+    "M0 256a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm168 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm224-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z"
+);
+
+crate::define_icon!(
+    EllipsisVertical,
+    "ellipsis-vertical",
+    "0 0 128 512",
+    "M64 144a56 56 0 1 1 0-112 56 56 0 1 1 0 112zm0 224c30.9 0 56 25.1 56 56s-25.1 56-56 56-56-25.1-56-56 25.1-56 56-56zm56-112c0 30.9-25.1 56-56 56s-56-25.1-56-56 25.1-56 56-56 56 25.1 56 56z"
+);
+
+crate::define_icon!(
     FaceAngry,
     "face-angry",
     "0 0 512 512",
@@ -386,6 +400,13 @@ crate::define_icon!(
 );
 
 crate::define_icon!(
+    Gears,
+    "gears",
+    "0 0 640 512",
+    "M415.9 210.5c12.2-3.3 25 2.5 30.5 13.8L465 261.9c10.3 1.4 20.4 4.2 29.9 8.1l35-23.3c10.5-7 24.4-5.6 33.3 3.3l19.2 19.2c8.9 8.9 10.3 22.9 3.3 33.3l-23.3 34.9c1.9 4.7 3.6 9.6 5 14.7 1.4 5.1 2.3 10.1 3 15.2l37.7 18.6c11.3 5.6 17.1 18.4 13.8 30.5l-7 26.2c-3.3 12.1-14.6 20.3-27.2 19.5l-42-2.7c-6.3 8.1-13.6 15.6-21.9 22l2.7 41.9c.8 12.6-7.4 24-19.5 27.2l-26.2 7c-12.2 3.3-24.9-2.5-30.5-13.8l-18.6-37.6c-10.3-1.4-20.4-4.2-29.9-8.1l-35 23.3c-10.5 7-24.4 5.6-33.3-3.3l-19.2-19.2c-8.9-8.9-10.3-22.8-3.3-33.3l23.3-35c-1.9-4.7-3.6-9.6-5-14.7s-2.3-10.2-3-15.2l-37.7-18.6c-11.3-5.6-17-18.4-13.8-30.5l7-26.2c3.3-12.1 14.6-20.3 27.2-19.5l41.9 2.7c6.3-8.1 13.6-15.6 21.9-22l-2.7-41.8c-.8-12.6 7.4-24 19.5-27.2l26.2-7zM448.4 340a44 44 0 1 0 .1 88 44 44 0 1 0 -.1-88zM224.9-45.5l26.2 7c12.1 3.3 20.3 14.7 19.5 27.2l-2.7 41.8c8.3 6.4 15.6 13.8 21.9 22l42-2.7c12.5-.8 23.9 7.4 27.2 19.5l7 26.2c3.2 12.1-2.5 24.9-13.8 30.5l-37.7 18.6c-.7 5.1-1.7 10.2-3 15.2s-3.1 10-5 14.7l23.3 35c7 10.5 5.6 24.4-3.3 33.3L307.3 262c-8.9 8.9-22.8 10.3-33.3 3.3L239 242c-9.5 3.9-19.6 6.7-29.9 8.1l-18.6 37.6c-5.6 11.3-18.4 17-30.5 13.8l-26.2-7c-12.2-3.3-20.3-14.7-19.5-27.2l2.7-41.9c-8.3-6.4-15.6-13.8-21.9-22l-42 2.7c-12.5 .8-23.9-7.4-27.2-19.5l-7-26.2c-3.2-12.1 2.5-24.9 13.8-30.5l37.7-18.6c.7-5.1 1.7-10.1 3-15.2 1.4-5.1 3-10 5-14.7L55.1 46.5c-7-10.5-5.6-24.4 3.3-33.3L77.6-6c8.9-8.9 22.8-10.3 33.3-3.3l35 23.3c9.5-3.9 19.6-6.7 29.9-8.1l18.6-37.6c5.6-11.3 18.3-17 30.5-13.8zM192.4 84a44 44 0 1 0 0 88 44 44 0 1 0 0-88z"
+);
+
+crate::define_icon!(
     GripLinesVertical,
     "grip-lines-vertical",
     "0 0 192 512",
@@ -538,6 +559,8 @@ pub enum Icon {
     CircleInfo(CircleInfo),
     CircleXmark(CircleXmark),
     Copy(Copy),
+    Ellipsis(Ellipsis),
+    EllipsisVertical(EllipsisVertical),
     FaceAngry(FaceAngry),
     FaceDizzy(FaceDizzy),
     FaceFlushed(FaceFlushed),
@@ -575,6 +598,7 @@ pub enum Icon {
     FaceSurprise(FaceSurprise),
     FaceTired(FaceTired),
     Gear(Gear),
+    Gears(Gears),
     GripLinesVertical(GripLinesVertical),
     Hashtag(Hashtag),
     Heart(Heart),
@@ -618,6 +642,8 @@ impl hypertext::Renderable for Icon {
             Self::CircleInfo(icon) => icon.render_to(buffer),
             Self::CircleXmark(icon) => icon.render_to(buffer),
             Self::Copy(icon) => icon.render_to(buffer),
+            Self::Ellipsis(icon) => icon.render_to(buffer),
+            Self::EllipsisVertical(icon) => icon.render_to(buffer),
             Self::FaceAngry(icon) => icon.render_to(buffer),
             Self::FaceDizzy(icon) => icon.render_to(buffer),
             Self::FaceFlushed(icon) => icon.render_to(buffer),
@@ -655,6 +681,7 @@ impl hypertext::Renderable for Icon {
             Self::FaceSurprise(icon) => icon.render_to(buffer),
             Self::FaceTired(icon) => icon.render_to(buffer),
             Self::Gear(icon) => icon.render_to(buffer),
+            Self::Gears(icon) => icon.render_to(buffer),
             Self::GripLinesVertical(icon) => icon.render_to(buffer),
             Self::Hashtag(icon) => icon.render_to(buffer),
             Self::Heart(icon) => icon.render_to(buffer),
