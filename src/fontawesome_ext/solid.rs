@@ -1,5 +1,3 @@
-use derive_more::From;
-
 crate::define_icon!(
     MoonStars,
     "moon-stars",
@@ -13,19 +11,3 @@ crate::define_icon!(
     "0 -32 576 576",
     "M264 456a24 24 0 0 1 48 0v64a24 24 0 0 1-48 0z M129.6 380.4a24 24 0 0 1 33.94 33.94l-45.25 45.25a24 24 0 0 1-33.94-33.94z M412.46 414.34a24 24 0 0 1 33.94-33.94l45.25 45.25a24 24 0 0 1-33.94 33.94z M288 144a112 112 0 1 1 0 224 112 112 0 1 1 0-224z M88 232a24 24 0 0 1 0 48H24a24 24 0 0 1 0-48z M552 232a24 24 0 0 1 0 48h-64a24 24 0 0 1 0-48z M84.36 86.34a24 24 0 0 1 33.94-33.94l45.25 45.25a24 24 0 0 1-33.94 33.94z M457.7 52.3a24 24 0 0 1 33.94 33.94l-45.25 45.25a24 24 0 0 1-33.94-33.94z M264-8a24 24 0 0 1 48 0v64a24 24 0 0 1-48 0z"
 );
-
-#[derive(Debug, Copy, Clone, PartialEq, Eq, From)]
-pub enum Icon {
-    MoonStars(MoonStars),
-    SunBright(SunBright),
-}
-
-#[cfg(feature = "hypertext")]
-impl hypertext::Renderable for Icon {
-    fn render_to(&self, buffer: &mut hypertext::Buffer<hypertext::context::Node>) {
-        match self {
-            Self::MoonStars(icon) => icon.render_to(buffer),
-            Self::SunBright(icon) => icon.render_to(buffer),
-        }
-    }
-}

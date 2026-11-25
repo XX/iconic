@@ -9,13 +9,12 @@ default = []
 text = []
 hypertext = ["dep:hypertext"]
 fontawesome = ["fontawesome-brand", "fontawesome-regular", "fontawesome-solid"]
-fontawesome-brand = ["dep:derive_more"]
-fontawesome-regular = ["dep:derive_more"]
-fontawesome-solid = ["dep:derive_more"]
+fontawesome-brand = []
+fontawesome-regular = []
+fontawesome-solid = []
 fontawesome-ext = ["fontawesome-ext-regular", "fontawesome-ext-solid"]
-fontawesome-ext-regular = ["dep:derive_more"]
-fontawesome-ext-solid = ["dep:derive_more"]
+fontawesome-ext-regular = []
+fontawesome-ext-solid = []
 
 [dependencies]
-derive_more = { version = "2.1", features = ["from"], optional = true }
 hypertext = { git = "https://github.com/XX/hypertext", branch = "dev", optional = true }

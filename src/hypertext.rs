@@ -1,7 +1,15 @@
 use hypertext::prelude::{SvgGlobalAttributes, hypertext_elements, hypertext_svg_elements};
-use hypertext::{Renderable, rsx};
+use hypertext::{Buffer, Renderable, context, rsx};
 
-use crate::icon::IconData;
+use crate::icon::{Icon, IconData, IconRef};
+
+pub fn svg(icon: &'static IconRef) -> impl Renderable {
+    rsx! {
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox=(icon.view_box)>
+            <path fill=(icon.path_fill) d=(icon.path_data)/>
+        </svg>
+    }
+}
 
 pub trait HypertextSvgIcon {
     fn svg() -> impl Renderable {}
@@ -9,11 +17,29 @@ pub trait HypertextSvgIcon {
 
 impl<I: IconData> HypertextSvgIcon for I {
     fn svg() -> impl Renderable {
-        rsx! {
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox=(I::VIEW_BOX)>
-                <path fill=(I::PATH_FILL) d=(I::PATH_DATA)/>
-            </svg>
-        }
+        svg(I::REF)
+    }
+}
+
+impl Renderable for Icon {
+    fn render_to(&self, buffer: &mut Buffer<context::Node>) {
+        svg(self.data()).render_to(buffer);
+    }
+}
+
+#[cfg(all(test, feature = "fontawesome-solid"))]
+mod tests {
+    use hypertext::RenderableExt;
+
+    use crate::fontawesome::solid::Gear;
+    use crate::icon::{Icon, IconData};
+
+    #[test]
+    fn dynamic_icon_renders_like_static() {
+        let icon = Icon::from(Gear);
+        assert_eq!(icon.name(), "gear");
+        assert_eq!(icon.data(), Gear::REF);
+        assert_eq!(icon.render().into_inner(), Gear.render().into_inner());
     }
 }
 

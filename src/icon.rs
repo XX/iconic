@@ -6,6 +6,56 @@ pub trait IconData {
     const PATH_FILL: &'static str = "currentColor";
 
     const PATH_DATA: &'static str = "";
+
+    const REF: &'static IconRef = &IconRef {
+        name: Self::NAME,
+        view_box: Self::VIEW_BOX,
+        path_fill: Self::PATH_FILL,
+        path_data: Self::PATH_DATA,
+    };
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, Hash)]
+pub struct IconRef {
+    pub name: &'static str,
+    pub view_box: &'static str,
+    pub path_fill: &'static str,
+    pub path_data: &'static str,
+}
+
+#[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
+pub struct Icon(&'static IconRef);
+
+impl Icon {
+    pub const fn new<I: IconData>() -> Self {
+        Self(I::REF)
+    }
+
+    pub const fn data(&self) -> &'static IconRef {
+        self.0
+    }
+
+    pub const fn name(&self) -> &'static str {
+        self.0.name
+    }
+
+    pub const fn view_box(&self) -> &'static str {
+        self.0.view_box
+    }
+
+    pub const fn path_fill(&self) -> &'static str {
+        self.0.path_fill
+    }
+
+    pub const fn path_data(&self) -> &'static str {
+        self.0.path_data
+    }
+}
+
+impl<I: IconData> From<I> for Icon {
+    fn from(_: I) -> Self {
+        Self::new::<I>()
+    }
 }
 
 #[macro_export]
@@ -20,88 +70,7 @@ macro_rules! define_icon {
             const PATH_DATA: &'static str = $path_data;
         }
 
-        impl From<$type> for $crate::icon::Icon {
-            fn from(icon: $type) -> Self {
-                self::Icon::from(icon).into()
-            }
-        }
-
         #[cfg(feature = "hypertext")]
         $crate::hypertext_renderable!($type);
     };
-}
-
-#[derive(Debug, Copy, Clone, PartialEq, Eq)]
-pub enum Icon {
-    #[cfg(any(feature = "fontawesome", feature = "fontawesome-brand"))]
-    FontawesomeBrand(crate::fontawesome::brand::Icon),
-
-    #[cfg(any(feature = "fontawesome", feature = "fontawesome-regular"))]
-    FontawesomeRegular(crate::fontawesome::regular::Icon),
-
-    #[cfg(any(feature = "fontawesome", feature = "fontawesome-solid"))]
-    FontawesomeSolid(crate::fontawesome::solid::Icon),
-
-    #[cfg(any(feature = "fontawesome-ext", feature = "fontawesome-ext-regular"))]
-    FontawesomeExtRegular(crate::fontawesome_ext::regular::Icon),
-
-    #[cfg(any(feature = "fontawesome-ext", feature = "fontawesome-ext-solid"))]
-    FontawesomeExtSolid(crate::fontawesome_ext::solid::Icon),
-}
-
-#[cfg(any(feature = "fontawesome", feature = "fontawesome-brand"))]
-impl From<crate::fontawesome::brand::Icon> for Icon {
-    fn from(icon: crate::fontawesome::brand::Icon) -> Self {
-        Self::FontawesomeBrand(icon)
-    }
-}
-
-#[cfg(any(feature = "fontawesome", feature = "fontawesome-regular"))]
-impl From<crate::fontawesome::regular::Icon> for Icon {
-    fn from(icon: crate::fontawesome::regular::Icon) -> Self {
-        Self::FontawesomeRegular(icon)
-    }
-}
-
-#[cfg(any(feature = "fontawesome", feature = "fontawesome-solid"))]
-impl From<crate::fontawesome::solid::Icon> for Icon {
-    fn from(icon: crate::fontawesome::solid::Icon) -> Self {
-        Self::FontawesomeSolid(icon)
-    }
-}
-
-#[cfg(any(feature = "fontawesome-ext", feature = "fontawesome-ext-regular"))]
-impl From<crate::fontawesome_ext::regular::Icon> for Icon {
-    fn from(icon: crate::fontawesome_ext::regular::Icon) -> Self {
-        Self::FontawesomeExtRegular(icon)
-    }
-}
-
-#[cfg(any(feature = "fontawesome-ext", feature = "fontawesome-ext-solid"))]
-impl From<crate::fontawesome_ext::solid::Icon> for Icon {
-    fn from(icon: crate::fontawesome_ext::solid::Icon) -> Self {
-        Self::FontawesomeExtSolid(icon)
-    }
-}
-
-#[cfg(feature = "hypertext")]
-impl hypertext::Renderable for Icon {
-    fn render_to(&self, buffer: &mut hypertext::Buffer<hypertext::context::Node>) {
-        match self {
-            #[cfg(any(feature = "fontawesome", feature = "fontawesome-brand"))]
-            Self::FontawesomeBrand(icon) => icon.render_to(buffer),
-
-            #[cfg(any(feature = "fontawesome", feature = "fontawesome-solid"))]
-            Self::FontawesomeSolid(icon) => icon.render_to(buffer),
-
-            #[cfg(any(feature = "fontawesome", feature = "fontawesome-regular"))]
-            Self::FontawesomeRegular(icon) => icon.render_to(buffer),
-
-            #[cfg(any(feature = "fontawesome-ext", feature = "fontawesome-ext-regular"))]
-            Self::FontawesomeExtRegular(icon) => icon.render_to(buffer),
-
-            #[cfg(any(feature = "fontawesome-ext", feature = "fontawesome-ext-solid"))]
-            Self::FontawesomeExtSolid(icon) => icon.render_to(buffer),
-        }
-    }
 }
