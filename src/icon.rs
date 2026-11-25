@@ -7,7 +7,7 @@ pub trait IconData {
 
     const PATH_DATA: &'static str = "";
 
-    const REF: &'static IconRef = &IconRef {
+    const REF: IconRef<'static> = IconRef {
         name: Self::NAME,
         view_box: Self::VIEW_BOX,
         path_fill: Self::PATH_FILL,
@@ -15,46 +15,52 @@ pub trait IconData {
     };
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, Hash)]
-pub struct IconRef {
-    pub name: &'static str,
-    pub view_box: &'static str,
-    pub path_fill: &'static str,
-    pub path_data: &'static str,
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+pub struct IconRef<'a> {
+    pub name: &'a str,
+    pub view_box: &'a str,
+    pub path_fill: &'a str,
+    pub path_data: &'a str,
 }
 
 #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
-pub struct Icon(&'static IconRef);
+pub struct Icon<'a>(IconRef<'a>);
 
-impl Icon {
-    pub const fn new<I: IconData>() -> Self {
+impl Icon<'static> {
+    pub const fn from_icon<I: IconData>() -> Self {
         Self(I::REF)
     }
+}
 
-    pub const fn data(&self) -> &'static IconRef {
+impl<'a> Icon<'a> {
+    pub const fn new(icon: IconRef<'a>) -> Self {
+        Self(icon)
+    }
+
+    pub const fn data(&self) -> IconRef<'a> {
         self.0
     }
 
-    pub const fn name(&self) -> &'static str {
+    pub const fn name(&self) -> &'a str {
         self.0.name
     }
 
-    pub const fn view_box(&self) -> &'static str {
+    pub const fn view_box(&self) -> &'a str {
         self.0.view_box
     }
 
-    pub const fn path_fill(&self) -> &'static str {
+    pub const fn path_fill(&self) -> &'a str {
         self.0.path_fill
     }
 
-    pub const fn path_data(&self) -> &'static str {
+    pub const fn path_data(&self) -> &'a str {
         self.0.path_data
     }
 }
 
-impl<I: IconData> From<I> for Icon {
+impl<I: IconData> From<I> for Icon<'static> {
     fn from(_: I) -> Self {
-        Self::new::<I>()
+        Self::from_icon::<I>()
     }
 }
 

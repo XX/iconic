@@ -3,7 +3,7 @@ use hypertext::{Buffer, Renderable, context, rsx};
 
 use crate::icon::{Icon, IconData, IconRef};
 
-pub fn svg(icon: &'static IconRef) -> impl Renderable {
+pub fn svg(icon: IconRef) -> impl Renderable {
     rsx! {
         <svg xmlns="http://www.w3.org/2000/svg" viewBox=(icon.view_box)>
             <path fill=(icon.path_fill) d=(icon.path_data)/>
@@ -21,7 +21,7 @@ impl<I: IconData> HypertextSvgIcon for I {
     }
 }
 
-impl Renderable for Icon {
+impl Renderable for Icon<'_> {
     fn render_to(&self, buffer: &mut Buffer<context::Node>) {
         svg(self.data()).render_to(buffer);
     }
